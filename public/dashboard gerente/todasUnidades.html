@@ -116,6 +116,31 @@
                         </li>
                         <li class="nav-item">
                             <a href="../widgets.html" class="nav-link">
+                                <i class="nav-icon fas fa-th"></i>
+                                <p>
+                                    Setores
+                                    <i class="fas fa-angle-left right"></i>
+
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="todosSetores.html" class="nav-link">
+                                        <i class="nav-icon far fa-circle "></i>
+                                        <p> Todos setores</p>
+
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="cadastrar_setor.html" class="nav-link">
+                                        <i class="nav-icon far fa-circle "></i>
+                                        <p>Cadastrar setor</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../widgets.html" class="nav-link">
                                 <i class="fas fa-map-marked"></i>
                                 <p>
                                     Unidades
@@ -219,43 +244,141 @@
 
             <!-- Main content -->
             <section class="content">
-                <div class="container-fluid">
-                    <!-- cards  -->
-                    <!-- Small boxes (Stat box) -->
-                    <div class="row" id="div_teste">
-                        
-                        
-                        <!-- ./col -->
-                    </div>
-                    <!-- /.row -->
 
+                <!-- Default box -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Minhas unidades</h3>
+
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                        <i class="fas fa-minus"></i>
+                      </button>
+                            <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
+                        <i class="fas fa-times"></i>
+                      </button>
+                        </div>
+                    </div>
+                    <div class="card-body p-0">
+                        <table class="table table-striped projects">
+                            <thead>
+                                <tr>
+                                    <th style="width: 1%">
+                                        #
+                                    </th>
+                                    <th style="width: 20%">
+                                        Unidade
+                                    </th>
+                                    <th style="width: 30%">
+                                        Endereço
+                                    </th>
+                                    <th>
+                                        Gerente
+                                    </th>
+
+                                    <th style="width: 20%">
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody id="div_teste">
+                                <tr>
+                                    <td>
+                                        #
+                                    </td>
+                                    <td>
+                                        <a>
+                                       Ands Pt
+                                    </a>
+                                        <br/>
+                                        <small>
+                                        Cadastrada em 22/11/2021
+                                    </small>
+                                    </td>
+                                    <td>
+                                        Guarulhos
+
+                                    </td>
+                                    <td>
+                                        <a href="funcionario.html">Jorge Pedro</a>
+                                    </td>
+                                    <td class="project-actions text-right">
+
+                                        <a class="btn btn-info btn-sm" href="#">
+                                            <i class="fas fa-pencil-alt">
+                                        </i> Edit
+                                        </a>
+                                        <a class="btn btn-danger btn-sm" href="#">
+                                            <i class="fas fa-trash">
+                                        </i> Delete
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        #
+                                    </td>
+                                    <td>
+                                        <a>
+                                       Ands Pt
+                                    </a>
+                                        <br/>
+                                        <small>
+                                        Cadastrada em 22/11/2021
+                                    </small>
+                                    </td>
+                                    <td>
+                                        Guarulhos
+
+                                    </td>
+                                    <td>
+                                        <a href="funcionario.html">Jorge Pedro</a>
+                                    </td>
+                                    <td class="project-actions text-right">
+
+                                        <a class="btn btn-info btn-sm" href="#">
+                                            <i class="fas fa-pencil-alt">
+                                        </i> Edit
+                                        </a>
+                                        <a class="btn btn-danger btn-sm" href="#">
+                                            <i class="fas fa-trash">
+                                        </i> Delete
+                                        </a>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
 
             </section>
             <!-- right col -->
-            </div>
-            <!-- /.content-wrapper -->
-            <footer class="main-footer">
-                <div class="float-right d-none d-sm-block">
-
-                </div>
-                <strong>Copyright &copy;2021 <a ../index.html>4Live</a>.</strong>
-            </footer>
-
-            <!-- Control Sidebar -->
-            <!-- <aside class="control-sidebar control-sidebar-dark">
-            </aside> -->
-            <!-- /.control-sidebar -->
         </div>
-        <!-- ./wrapper -->
+        <!-- /.content-wrapper -->
+        <footer class="main-footer">
+            <div class="float-right d-none d-sm-block">
 
-        <!-- jQuery -->
-        <script src="../plugins/jquery/jquery.min.js"></script>
-        <!-- Bootstrap 4 -->
-        <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <!-- AdminLTE App -->
-        <script src="../dist/js/adminlte.min.js"></script>
-        <!-- AdminLTE for demo purposes -->
-        <script src="../dist/js/demo.js"></script>
+            </div>
+            <strong>Copyright &copy;2021 <a ../index.html>4Live</a>.</strong>
+        </footer>
+
+        <!-- Control Sidebar -->
+        <!-- <aside class="control-sidebar control-sidebar-dark">
+            </aside> -->
+        <!-- /.control-sidebar -->
+    </div>
+    <!-- ./wrapper -->
+
+    <!-- jQuery -->
+    <script src="../plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="../dist/js/demo.js"></script>
 
 
 </body>
@@ -263,106 +386,20 @@
 </html>
 
 <script>
-    // FUNÇÃO QUE ATUALIZA A PÁGINA APÓS A RECUPERAÇÃO DOS DADOS
-    setInterval(() => {
-        getUnidadesByGerente();
-        }, 3000);
-        atualizarNome()
+    setTimeout(() => {
+        obterUnidade()
+    }, 2000)
+
+    // atualizarNome()
 
 
-    function atualizarNome() {
-        var nome = sessionStorage.getItem("nome_usuario_meuapp")
-        nome_user.innerHTML = `Olá, ${nome}`;
-    }
-
-    function atualizarFeed(publicacoes) {
-        var feed = document.getElementById("div_teste");
-        feed.innerHTML = "";
-
-        var divContent = document.createElement("div")
-        var divFluid = document.createElement("div")
-        var divRow = document.createElement("section")
-        for (let i = 0; i < publicacoes[0].length; i++) {
-            var publicacao = publicacoes[0];
-            
-
-            console.log(publicacao)
-
-                
-                var divCard = document.createElement("div")
-            var divSmallBox = document.createElement("div")
-            var divCpu = document.createElement("h4")
-            var divMemoria = document.createElement("h4")
-            var divDisco = document.createElement("h4")
-
-            divCpu.innerHTML = `CPU: ${publicacao.uso_cpu}`;
-            divMemoria.innerHTML = `Memoria: ${publicacao.uso_memoria}`;
-            divDisco.innerHTML = `Disco: ${publicacao.uso_disco}`;
-
-            divSmallBox.innerHTML = `
-                <div class="inner">
-                  <h4>Nome unidade: ${publicacao[i].nome}<sup style="font-size: 20px"></sup></h4>
-                  <h4>Endereco: ${publicacao[i].endereco}<sup style="font-size: 20px"></sup></h4>
-                </div>
-                <div class="icon">
-                  <i class="fas fa-hdd"></i>
-                </div>
-                <a href="#" class="small-box-footer">Mais detalhes <i class="fas fa-arrow-circle-right"></i></a>`
-
-            divCard.className = "col-lg-3 "
-            divCard.className += "col-6"
-            divSmallBox.className = "small-box"
+// function atualizarNome() {
+//     var nome = sessionStorage.getItem("nome_usuario_meuapp")
+//     nome_user.innerHTML = `Olá, ${nome}`;
+// }
 
 
-            divSmallBox.style.backgroundColor = 'green'
-            divSmallBox.style.color = 'white'
-
-            divCard.id = publicacao[i].id_unidade
-            divCard.style.cursor = "pointer"
-            divCard.setAttribute("onclick", "maquina(this)")
-
-            divContent.className = "content"
-            divFluid.className = "container-fluid"
-            divRow.className = "row"
-
-            if (publicacao.nvl_alerta == 1) {
-                divSmallBox.style.background = 'green'
-            } else if (publicacao.nvl_alerta == 2) {
-                divSmallBox.style.background = '#e0a800'
-            } else if (publicacao.nvl_alerta == 3) {
-                divSmallBox.style.background = 'orange'
-            } else if (publicacao.nvl_alerta == 4) {
-                divSmallBox.style.background = '#bd0b0b'
-            }
-
-            divCard.appendChild(divSmallBox)
-
-            divRow.appendChild(divCard)
-
-            divFluid.appendChild(divRow)
-
-            divContent.appendChild(divFluid)
-
-            feed.appendChild(divContent)
-            }
-
-            console.log(publicacoes)
-
-           
-        
-
-    }
-
-    function maquina(card) {
-        var item = card.id
-
-        sessionStorage.setItem('id_unidade_meuapp', item);
-
-        window.location.href = 'home.html'
-    }
-
-    // FUNÇÃO PARA OBTER AS PUBLICAÇÕES
-    function getUnidadesByGerente(id_unidade) {
+    function obterUnidade(id_unidade) {
         var id_unidade = sessionStorage.getItem("gerente_meuapp")
         fetch(`/publicacoes2/getUnidadesByGerente${id_unidade}`)
             .then(resposta => {
@@ -382,5 +419,70 @@
             });
     }
 
- 
+
+    function cardMaquina(card) {
+        var item = card.id
+
+        sessionStorage.setItem('id_unidade_meuapp', item);
+
+        window.location.href = 'home.html'
+    }
+
+    function atualizarFeed(publicacoes) {
+        var feed = document.getElementById("div_teste");
+        feed.innerHTML = "";
+
+        var divContent = document.createElement("div")
+        var divFluid = document.createElement("div")
+        var divRow = document.createElement("section")
+        console.log(publicacoes)
+        for (let i = 0; i < publicacoes.length; i++) {
+            var publicacao = publicacoes[i];
+            
+
+            //   var divC = document.createElement("div")
+            var divCard = document.createElement("tr")
+
+
+            divCard.innerHTML = ` <td>
+                                        #
+                                    </td>
+                                    <td>
+                                        <a>
+                                       Unidade: ${publicacao[i].id_unidade}
+                                    </a>
+                                        <br/>
+                                        <small>
+                                        Nome: ${publicacao[i].nome}
+                                    </small>
+                                    </td>
+                                    <td>
+                                        <ul class="list-inline">
+                                            <li class="list-inline-item">
+                                                Endereço: ${publicacao[i].endereco} <br>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                    <td class="project_progress">
+                                        Responsável: ${publicacao[i].nome_gerente} <br>
+                                    </td>`
+                                    
+
+            // divC.appendChild(divCard)
+
+            // divC.style.width = "100%"
+
+
+            divCard.id = publicacao[i].id_unidade
+            divCard.style.cursor = "pointer"
+            divCard.setAttribute("onclick", "cardMaquina(this)")
+
+
+            feed.appendChild(divCard)
+        }
+
+
+
+
+    }
 </script>

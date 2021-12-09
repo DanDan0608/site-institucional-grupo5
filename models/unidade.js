@@ -32,12 +32,7 @@ module.exports = (sequelize, DataTypes) => {
 			field: 'id_gerente',
 			type: DataTypes.INTEGER,
 			allowNull: false
-		},
-        id_empresa: {
-            field: 'id_empresa',
-            type: DataTypes.STRING,
-            allowNull: false
-        }
+		}
 	}, 
 	{
 		tableName: 'tb_unidade', 

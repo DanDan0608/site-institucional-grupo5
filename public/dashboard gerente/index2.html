@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>gerente |Home</title>
+    <title>Suporte |Home</title>
 
     <!-- Google Font: Nunito -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
@@ -64,7 +64,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a onclick="darck()" class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
+                    <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
                         <i class="fas fa-th-large"></i>
                     </a>
                 </li>
@@ -84,11 +84,8 @@
             <div class="sidebar">
                 <!-- Sidebar user (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                    <div class="image">
-                        <img src="../dist/img/user1-128x128.jpg" class="img-circle elevation-2" alt="User Image">
-                    </div>
-                    <div class="info">
-                        <a href="perfil_gerente.html" class="d-block">Julio Mesquita</a>
+                    <div class="warning">
+                        <a href="perfil_suporte.html" class="d-block" id="nome_user">Nina Mcintire</a>
                     </div>
                 </div>
 
@@ -110,79 +107,48 @@
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                         <li class="nav-item">
-                            <a href="index.html" class="nav-link">
+                            <a href="index_suport.html" class="nav-link">
                                 <p>Dashboard </p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../widgets.html" class="nav-link">
-                                <i class="fas fa-map-marked"></i>
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-chart-pie"></i>
                                 <p>
-                                    Unidades
-                                    <i class="fas fa-angle-left right"></i>
-
+                                    Históricos
+                                    <i class="right fas fa-angle-left"></i>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="todasUnidades.html" class="nav-link">
-                                        <i class="nav-icon far fa-circle "></i>
-                                        <p> Todas unidades</p>
-
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="cadastrar_unidade.html" class="nav-link">
-                                        <i class="nav-icon far fa-circle "></i>
-                                        <p>Cadastrar unidade</p>
+                                    <a href="historico.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Todas as máquinas</p>
                                     </a>
                                 </li>
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a href="../widgets.html" class="nav-link">
-                                <i class="fas fa-users"></i>
+                            <a href="cadastrar_maquina_suporte.sh" class="nav-link">
+                                <i class="nav-icon far fa-plus-square"></i>
                                 <p>
-                                    Funcionário
-                                    <i class="fas fa-angle-left right"></i>
-
+                                    Cadastrar Máquina
                                 </p>
                             </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="todos_funcionarios.html" class="nav-link">
-                                        <i class="nav-icon far fa-circle "></i>
-                                        <p> Todos funcionários</p>
-
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="cadastrar_funcionario.html" class="nav-link">
-                                        <i class="nav-icon far fa-circle "></i>
-                                        <p>Cadastrar funcionário</p>
-                                    </a>
-                                </li>
-                            </ul>
                         </li>
                         <li class="nav-item">
-                            <a href="parametros_suporte.html" class="nav-link">
+                            <a href="./index_suport.html" class="nav-link">
                                 <i class="nav-icon fas fa-table"></i>
                                 <p>
-                                    Definir parâmetro
+                                    Visão Geral
 
                                 </p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="perfil_gerente.html" class="nav-link">
+                            <a href="perfil_suporte.html" class="nav-link">
                                 <i class="nav-icon fas fa-edit"></i>
                                 <p>Perfil</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="enviarMensagem.html" class="nav-link">
-                                <i class="nav-icon fas fa-question"></i>
-                                <p>Contato</p>
                             </a>
                         </li>
                     </ul>
@@ -199,8 +165,7 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">Nome da unidade</h1>
-
+                            <h1 class="m-0">Dashboard</h1>
                         </div>
                         <!-- /.col -->
                         <div class="col-sm-6">
@@ -223,13 +188,9 @@
                     <!-- cards  -->
                     <!-- Small boxes (Stat box) -->
                     <div class="row" id="div_teste">
-                        
-                        
-                        <!-- ./col -->
+
                     </div>
                     <!-- /.row -->
-
-
             </section>
             <!-- right col -->
             </div>
@@ -242,8 +203,9 @@
             </footer>
 
             <!-- Control Sidebar -->
-            <!-- <aside class="control-sidebar control-sidebar-dark">
-            </aside> -->
+            <aside class="control-sidebar control-sidebar-dark">
+                <!-- Control sidebar content goes here -->
+            </aside>
             <!-- /.control-sidebar -->
         </div>
         <!-- ./wrapper -->
@@ -256,8 +218,6 @@
         <script src="../dist/js/adminlte.min.js"></script>
         <!-- AdminLTE for demo purposes -->
         <script src="../dist/js/demo.js"></script>
-
-
 </body>
 
 </html>

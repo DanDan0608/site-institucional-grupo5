@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>gerente |Home</title>
+
+    <!-- Google Font: Nunito -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../dist/css/adminlte.min.css">
+</head>
+
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+
+        <div class="preloader flex-column justify-content-center align-items-center">
+            <img class="animation__wobble" src="../img/image-removebg-preview (13).png" alt="" width="400">
+        </div>
+        <!-- Navbar -->
+        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+            <!-- Left navbar links -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                </li>
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a href="./index_suport.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a href="#" class="nav-link">Funcionários</a>
+                </li>
+            </ul>
+
+            <!-- Right navbar links -->
+            <ul class="navbar-nav ml-auto">
+                <!-- Navbar Search -->
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="navbar-search" href="#" role="button">
+                        <i class="fas fa-search"></i>
+                    </a>
+                    <div class="navbar-search-block">
+                        <form class="form-inline">
+                            <div class="input-group input-group-sm">
+                                <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+                                <div class="input-group-append">
+                                    <button class="btn btn-navbar" type="submit">
+                  <i class="fas fa-search"></i>
+                </button>
+                                    <button class="btn btn-navbar" type="button" data-widget="navbar-search">
+                  <i class="fas fa-times"></i>
+                </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+                        <i class="fas fa-expand-arrows-alt"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a onclick="darck()" class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
+                        <i class="fas fa-th-large"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <!-- /.navbar -->
+
+        <!-- Main Sidebar Container -->
+        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+            <!-- Brand Logo -->
+            <a href="../index.html" class="brand-link">
+                <img src="../img/image-removebg-preview (12).png" alt=" Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+                <span class="brand-text font-weight-light">4live</span>
+            </a>
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Sidebar user (optional) -->
+                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                    <div class="image">
+                        <img src="../dist/img/user1-128x128.jpg" class="img-circle elevation-2" alt="User Image">
+                    </div>
+                    <div class="info">
+                        <a href="perfil_gerente.html" class="d-block">Julio Mesquita</a>
+                    </div>
+                </div>
+
+                <!-- SidebarSearch Form -->
+                <div class="form-inline">
+                    <div class="input-group" data-widget="sidebar-search">
+                        <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+                        <div class="input-group-append">
+                            <button class="btn btn-sidebar">
+              <i class="fas fa-search fa-fw"></i>
+            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar Menu -->
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                        <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link">
+                                <p>Dashboard </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../widgets.html" class="nav-link">
+                                <i class="nav-icon fas fa-th"></i>
+                                <p>
+                                    Setores
+                                    <i class="fas fa-angle-left right"></i>
+
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="todosSetores.html" class="nav-link">
+                                        <i class="nav-icon far fa-circle "></i>
+                                        <p> Todos setores</p>
+
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="cadastrar_setor.html" class="nav-link">
+                                        <i class="nav-icon far fa-circle "></i>
+                                        <p>Cadastrar setor</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../widgets.html" class="nav-link">
+                                <i class="fas fa-map-marked"></i>
+                                <p>
+                                    Unidades
+                                    <i class="fas fa-angle-left right"></i>
+
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="todasUnidades.html" class="nav-link">
+                                        <i class="nav-icon far fa-circle "></i>
+                                        <p> Todas unidades</p>
+
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="cadastrar_unidade.html" class="nav-link">
+                                        <i class="nav-icon far fa-circle "></i>
+                                        <p>Cadastrar unidade</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../widgets.html" class="nav-link">
+                                <i class="fas fa-users"></i>
+                                <p>
+                                    Funcionário
+                                    <i class="fas fa-angle-left right"></i>
+
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="todos_funcionarios.html" class="nav-link">
+                                        <i class="nav-icon far fa-circle "></i>
+                                        <p> Todos funcionários</p>
+
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="cadastrar_funcionario.html" class="nav-link">
+                                        <i class="nav-icon far fa-circle "></i>
+                                        <p>Cadastrar funcionário</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="parametros_suporte.html" class="nav-link">
+                                <i class="nav-icon fas fa-table"></i>
+                                <p>
+                                    Definir parâmetro
+
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="perfil_gerente.html" class="nav-link">
+                                <i class="nav-icon fas fa-edit"></i>
+                                <p>Perfil</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="enviarMensagem.html" class="nav-link">
+                                <i class="nav-icon fas fa-question"></i>
+                                <p>Contato</p>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- /.sidebar-menu -->
+            </div>
+            <!-- /.sidebar -->
+        </aside>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1 class="m-0">Nome da unidade</h1>
+
+                        </div>
+                        <!-- /.col -->
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item active">Funcionários</li>
+                            </ol>
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <!-- /.container-fluid -->
+            </div>
+            <!-- /.content-header -->
+
+            <!-- Main content -->
+            <section class="content">
+
+                <!-- Default box -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Funcionários</h3>
+
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                        <i class="fas fa-minus"></i>
+                      </button>
+                            <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
+                        <i class="fas fa-times"></i>
+                      </button>
+                        </div>
+                    </div>
+                    <div class="card-body p-0">
+                        <table class="table table-striped projects">
+                            <thead>
+                                <tr>
+                                    <th style="width: 1%">
+                                        #
+                                    </th>
+                                    <th style="width: 20%">
+                                        Funcionario
+                                    </th>
+                                    <th style="width: 30%">
+                                        Setor
+                                    </th>
+                                    <th>
+                                    </th>
+                                    <th style="width: 20%">
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody id="div_teste">
+                                <tr>
+                                    <td>
+                                        #
+                                    </td>
+                                    <td>
+                                        <a>
+                                       Brends Brasil
+                                    </a>
+                                        <br/>
+                                        <small>
+                                        Cadastrada em 22/11/2021
+                                    </small>
+                                    </td>
+                                    <td>
+                                        Tecnologia
+                                    </td>
+                                    <td>
+                                        Gerente
+                                    </td>
+
+                                    <td class="project-actions text-right">
+                                        <a class="btn btn-info btn-sm" href="#">
+                                            <i class="fas fa-pencil-alt">
+                                        </i> Edit
+                                        </a>
+                                        <a class="btn btn-danger btn-sm" href="#">
+                                            <i class="fas fa-trash">
+                                        </i> Delete
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        #
+                                    </td>
+                                    <td>
+                                        <a>
+                                       Brends Brasil
+                                    </a>
+                                        <br/>
+                                        <small>
+                                        Cadastrada em 22/11/2021
+                                    </small>
+                                    </td>
+                                    <td>
+                                        Tecnologia
+                                    </td>
+                                    <td>
+                                        Gerente
+                                    </td>
+
+                                    <td class="project-actions text-right">
+                                        <a class="btn btn-info btn-sm" href="#">
+                                            <i class="fas fa-pencil-alt">
+                                        </i> Edit
+                                        </a>
+                                        <a class="btn btn-danger btn-sm" href="#">
+                                            <i class="fas fa-trash">
+                                        </i> Delete
+                                        </a>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+
+            </section>
+            <!-- right col -->
+        </div>
+        <!-- /.content-wrapper -->
+        <footer class="main-footer">
+            <div class="float-right d-none d-sm-block">
+
+            </div>
+            <strong>Copyright &copy;2021 <a ../index.html>4Live</a>.</strong>
+        </footer>
+
+        <!-- Control Sidebar -->
+        <!-- <aside class="control-sidebar control-sidebar-dark">
+            </aside> -->
+        <!-- /.control-sidebar -->
+    </div>
+    <!-- ./wrapper -->
+
+    <!-- jQuery -->
+    <script src="../plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="../dist/js/demo.js"></script>
+
+
+</body>
+
+</html>
+
+<script>
+    setTimeout(() => {
+        obterUnidade()
+    }, 2000)
+
+    // atualizarNome()
+
+
+// function atualizarNome() {
+//     var nome = sessionStorage.getItem("nome_usuario_meuapp")
+//     nome_user.innerHTML = `Olá, ${nome}`;
+// }
+
+
+    function obterUnidade(id_unidade) {
+        var id_unidade = sessionStorage.getItem("id_unidade_meuapp")
+        fetch(`/publicacoes2/getFuncionariosByUnidade${id_unidade}`)
+            .then(resposta => {
+                if (resposta.ok) {
+                    resposta.json().then(function(resposta) {
+                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+
+                        atualizarFeed(resposta);
+
+                    });
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+            .catch(function(error) {
+                console.error(`Erro na obtenção das publicações: ${error.message}`);
+            });
+    }
+
+
+    function cardMaquina(card) {
+        var item = card.id
+
+        sessionStorage.setItem('id_unidade_meuapp', item);
+
+        window.location.href = 'home.html'
+    }
+
+    function atualizarFeed(publicacoes) {
+        var feed = document.getElementById("div_teste");
+        feed.innerHTML = "";
+
+        var divContent = document.createElement("div")
+        var divFluid = document.createElement("div")
+        var divRow = document.createElement("section")
+        console.log(publicacoes)
+        for (let i = 0; i < publicacoes.length; i++) {
+            var publicacao = publicacoes[i];
+            
+
+            //   var divC = document.createElement("div")
+            var divCard = document.createElement("tr")
+
+
+            divCard.innerHTML = ` <td>
+                                        #
+                                    </td>
+                                    <td>
+                                        <a>
+                                       Nome: ${publicacao[i].nome}
+                                    </a>
+                                        <br/>
+                                        <small>
+                                        Email: ${publicacao[i].email}
+                                    </small>
+                                    </td>
+                                    <td>
+                                        <ul class="list-inline">
+                                            <li class="list-inline-item">
+                                                Acesso: ${publicacao[i].setor} <br>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                    <td class="project-actions text-right">
+                                        <button type="button" onclick class="btn btn-danger btn-sm" href="#">
+                                            <i class="fas fa-trash">
+                                        </i> Delete
+                                        </button>
+                                    </td>`
+                                    
+
+            // divC.appendChild(divCard)
+
+            // divC.style.width = "100%"
+
+
+            divCard.id = publicacao[i].id_unidade
+            divCard.style.cursor = "pointer"
+            divCard.setAttribute("onclick", "cardMaquina(this)")
+
+
+            feed.appendChild(divCard)
+        }
+
+
+
+
+    }
+</script>

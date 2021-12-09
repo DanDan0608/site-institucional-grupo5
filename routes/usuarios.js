@@ -3,6 +3,7 @@ var router = express.Router();
 var sequelize = require('../models').sequelize;
 var Usuario = require('../models').Usuario;
 var Gerente = require('../models').Gerente;
+var Unidade = require('../models').Unidade;
 
 let sessoes = [];
 
@@ -87,6 +88,17 @@ router.put('/alterarTelefone:id_usuario', function(req, res, next) {
 	});
 });
 
+router.post('/deletarUsuario:id_usuario', function(req, res, next) {
+	Usuario.destroy (
+		{where: {id_usuario: req.params.id_usuario}}
+	).then(function (rowUpdate) {
+		res.json(rowUpdate)
+	}).catch(erro => {
+		console.error(erro);
+		res.status(500).send(erro.message);
+	});
+});
+
 /* Cadastrar usuário */
 router.post('/cadastrar', function(req, res, next) {
 	console.log('Criando um usuário');
@@ -99,6 +111,23 @@ router.post('/cadastrar', function(req, res, next) {
 		telefone: req.body.telefone,
 		id_unidade: req.body.unidade,
 		nivel_acesso: req.body.nivel_acesso,
+	}).then(resultado => {
+		console.log(`Registro criado: ${resultado}`)
+        res.send(resultado);
+    }).catch(erro => {
+		console.error(erro);
+		res.status(500).send(erro.message);
+  	});
+});
+
+router.post('/cadastrarUnidade:id_gerente', function(req, res, next) {
+	console.log('Criando um usuário');
+	
+	Unidade.create({
+		nome: req.body.nome,
+		endereco: req.body.endereco,
+		id_empresa: 1,
+		id_gerente: req.params.id_gerente,
 	}).then(resultado => {
 		console.log(`Registro criado: ${resultado}`)
         res.send(resultado);

@@ -4,22 +4,22 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>gerente |Home</title>
+    <title>4Live | UI Parametro</title>
 
-    <!-- Google Font: Nunito -->
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
+    <!-- Ion Slider -->
+    <link rel="stylesheet" href="../plugins/ion-rangeslider/css/ion.rangeSlider.min.css">
+    <!-- bootstrap slider -->
+    <link rel="stylesheet" href="../plugins/bootstrap-slider/css/bootstrap-slider.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="../dist/css/adminlte.min.css">
 </head>
 
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
-
-        <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__wobble" src="../img/image-removebg-preview (13).png" alt="" width="400">
-        </div>
         <!-- Navbar -->
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
             <!-- Left navbar links -->
@@ -28,7 +28,7 @@
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="./index_suport.html" class="nav-link">Home</a>
+                    <a href="index.html" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
                     <a href="#" class="nav-link">Dashboard</a>
@@ -48,23 +48,19 @@
                                 <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
                                 <div class="input-group-append">
                                     <button class="btn btn-navbar" type="submit">
-                  <i class="fas fa-search"></i>
-                </button>
+                                        <i class="fas fa-search"></i>
+                                    </button>
                                     <button class="btn btn-navbar" type="button" data-widget="navbar-search">
-                  <i class="fas fa-times"></i>
-                </button>
+                                        <i class="fas fa-times"></i>
+                                    </button>
                                 </div>
                             </div>
                         </form>
                     </div>
                 </li>
+
                 <li class="nav-item">
-                    <a class="nav-link" data-widget="fullscreen" href="#" role="button">
-                        <i class="fas fa-expand-arrows-alt"></i>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a onclick="darck()" class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
+                    <a class="nav-link" data-widget="control-sidebar" data-controlsidebar-slide="true" href="#" role="button">
                         <i class="fas fa-th-large"></i>
                     </a>
                 </li>
@@ -85,10 +81,10 @@
                 <!-- Sidebar user (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <img src="../dist/img/user1-128x128.jpg" class="img-circle elevation-2" alt="User Image">
+                        <img src="../dist/img/user4-128x128.jpg" class="img-circle elevation-2" alt="User Image">
                     </div>
-                    <div class="info">
-                        <a href="perfil_gerente.html" class="d-block">Julio Mesquita</a>
+                    <div class="warning">
+                        <a href="perfil_suporte.html" class="d-block">Nina Mcintire</a>
                     </div>
                 </div>
 
@@ -113,6 +109,31 @@
                             <a href="index.html" class="nav-link">
                                 <p>Dashboard </p>
                             </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../widgets.html" class="nav-link">
+                                <i class="nav-icon fas fa-th"></i>
+                                <p>
+                                    Setores
+                                    <i class="fas fa-angle-left right"></i>
+
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="todosSetores.html" class="nav-link">
+                                        <i class="nav-icon far fa-circle "></i>
+                                        <p> Todos setores</p>
+
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="cadastrar_setor.html" class="nav-link">
+                                        <i class="nav-icon far fa-circle "></i>
+                                        <p>Cadastrar setor</p>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
                         <li class="nav-item">
                             <a href="../widgets.html" class="nav-link">
@@ -195,55 +216,93 @@
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
-            <div class="content-header">
+            <section class="content-header">
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">Nome da unidade</h1>
-
+                            <h1>Parâmetro</h1>
                         </div>
-                        <!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">Dashboard</li>
+                                <li class="breadcrumb-item active">Parâmetro</li>
                             </ol>
                         </div>
-                        <!-- /.col -->
                     </div>
-                    <!-- /.row -->
                 </div>
                 <!-- /.container-fluid -->
-            </div>
-            <!-- /.content-header -->
+            </section>
 
             <!-- Main content -->
             <section class="content">
                 <div class="container-fluid">
-                    <!-- cards  -->
-                    <!-- Small boxes (Stat box) -->
-                    <div class="row" id="div_teste">
-                        
-                        
-                        <!-- ./col -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card card-primary">
+                                <div class="card-header">
+                                    <h3 class="card-title">Selecione o seu máximo ideal</h3>
+                                </div>
+                                <!-- /.card-header -->
+                                <div class="card-body">
+                                    <div class="row margin">
+                                        <div class="col-sm-6">
+                                            <span>Memória</span>
+                                            <input id="range_1">
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <span>CPU</span>
+                                            <input id="range_4">
+                                        </div>
+
+                                    </div>
+
+                                    <div class="row margin">
+
+                                        <div class="col-sm-6">
+                                            <span>Memória</span>
+                                            <input id="range_2">
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <span>CPU</span>
+                                            <input id="range_3">
+                                        </div>
+                                    </div>
+
+                                    <div class="row margin">
+                                        <div class="col-sm-6">
+                                            <span>Memória</span>
+                                            <input id="range_5">
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <span>CPU</span>
+                                            <input id="range_6">
+                                        </div>
+                                    </div>
+
+                                    <!-- /.card-body -->
+                                </div>
+                                <!-- /.card -->
+                            </div>
+                            <!-- /.col -->
+                        </div>
                     </div>
-                    <!-- /.row -->
-
-
+                    <!-- /.container-fluid -->
             </section>
-            <!-- right col -->
+            <!-- /.content -->
             </div>
             <!-- /.content-wrapper -->
+
             <footer class="main-footer">
                 <div class="float-right d-none d-sm-block">
 
                 </div>
-                <strong>Copyright &copy;2021 <a ../index.html>4Live</a>.</strong>
+                <strong>Copyright &copy; 2014-2021 <a ../index.html>AdminLTE.io</a>.</strong> All rights reserved.
             </footer>
 
             <!-- Control Sidebar -->
-            <!-- <aside class="control-sidebar control-sidebar-dark">
-            </aside> -->
+            <aside class="control-sidebar control-sidebar-dark">
+                <!-- Control sidebar content goes here -->
+            </aside>
             <!-- /.control-sidebar -->
         </div>
         <!-- ./wrapper -->
@@ -254,133 +313,83 @@
         <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
         <!-- AdminLTE App -->
         <script src="../dist/js/adminlte.min.js"></script>
+        <!-- Ion Slider -->
+        <script src="../plugins/ion-rangeslider/js/ion.rangeSlider.min.js"></script>
+        <!-- Bootstrap slider -->
+        <script src="../plugins/bootstrap-slider/bootstrap-slider.min.js"></script>
         <!-- AdminLTE for demo purposes -->
         <script src="../dist/js/demo.js"></script>
+        <!-- Page specific script -->
+        <script>
+            $(function() {
+                /* BOOTSTRAP SLIDER */
+                $('.slider').bootstrapSlider()
 
+                /* ION SLIDER */
+                $('#range_1').ionRangeSlider({
+                    min: 0,
+                    max: 128,
+                    from: 90,
+                    to: 110,
+                    type: 'double',
+                    step: 1,
+                    prefix: 'G ',
+                    prettify: false,
+                    hasGrid: true
 
+                })
+                $('#range_2').ionRangeSlider()
+
+                $('#range_5').ionRangeSlider({
+                    min: 0,
+                    max: 10,
+                    type: 'single',
+                    step: 0.1,
+                    postfix: ' mm',
+                    prettify: false,
+                    hasGrid: true
+                })
+                $('#range_6').ionRangeSlider({
+                    min: -50,
+                    max: 50,
+                    from: 0,
+                    type: 'single',
+                    step: 1,
+                    postfix: '°',
+                    prettify: false,
+                    hasGrid: true
+                })
+
+                $('#range_4').ionRangeSlider({
+                    type: 'double',
+                    step: 1,
+                    postfix: '%',
+                    min: 0,
+                    max: 100,
+                    from: 80,
+                    to: 98,
+                    hideMinMax: true,
+                    hideFromTo: false
+                })
+                $('#range_3').ionRangeSlider({
+                    type: 'double',
+                    postfix: ' miles',
+                    step: 10000,
+                    from: 25000000,
+                    to: 35000000,
+                    onChange: function(obj) {
+                        var t = ''
+                        for (var prop in obj) {
+                            t += prop + ': ' + obj[prop] + '\r\n'
+                        }
+                        $('#result').html(t)
+                    },
+                    onLoad: function(obj) {
+                        //
+                    }
+                })
+            })
+        </script>
 </body>
 
 </html>
-
-<script>
-    // FUNÇÃO QUE ATUALIZA A PÁGINA APÓS A RECUPERAÇÃO DOS DADOS
-    setInterval(() => {
-        getUnidadesByGerente();
-        }, 3000);
-        atualizarNome()
-
-
-    function atualizarNome() {
-        var nome = sessionStorage.getItem("nome_usuario_meuapp")
-        nome_user.innerHTML = `Olá, ${nome}`;
-    }
-
-    function atualizarFeed(publicacoes) {
-        var feed = document.getElementById("div_teste");
-        feed.innerHTML = "";
-
-        var divContent = document.createElement("div")
-        var divFluid = document.createElement("div")
-        var divRow = document.createElement("section")
-        for (let i = 0; i < publicacoes[0].length; i++) {
-            var publicacao = publicacoes[0];
-            
-
-            console.log(publicacao)
-
-                
-                var divCard = document.createElement("div")
-            var divSmallBox = document.createElement("div")
-            var divCpu = document.createElement("h4")
-            var divMemoria = document.createElement("h4")
-            var divDisco = document.createElement("h4")
-
-            divCpu.innerHTML = `CPU: ${publicacao.uso_cpu}`;
-            divMemoria.innerHTML = `Memoria: ${publicacao.uso_memoria}`;
-            divDisco.innerHTML = `Disco: ${publicacao.uso_disco}`;
-
-            divSmallBox.innerHTML = `
-                <div class="inner">
-                  <h4>Nome unidade: ${publicacao[i].nome}<sup style="font-size: 20px"></sup></h4>
-                  <h4>Endereco: ${publicacao[i].endereco}<sup style="font-size: 20px"></sup></h4>
-                </div>
-                <div class="icon">
-                  <i class="fas fa-hdd"></i>
-                </div>
-                <a href="#" class="small-box-footer">Mais detalhes <i class="fas fa-arrow-circle-right"></i></a>`
-
-            divCard.className = "col-lg-3 "
-            divCard.className += "col-6"
-            divSmallBox.className = "small-box"
-
-
-            divSmallBox.style.backgroundColor = 'green'
-            divSmallBox.style.color = 'white'
-
-            divCard.id = publicacao[i].id_unidade
-            divCard.style.cursor = "pointer"
-            divCard.setAttribute("onclick", "maquina(this)")
-
-            divContent.className = "content"
-            divFluid.className = "container-fluid"
-            divRow.className = "row"
-
-            if (publicacao.nvl_alerta == 1) {
-                divSmallBox.style.background = 'green'
-            } else if (publicacao.nvl_alerta == 2) {
-                divSmallBox.style.background = '#e0a800'
-            } else if (publicacao.nvl_alerta == 3) {
-                divSmallBox.style.background = 'orange'
-            } else if (publicacao.nvl_alerta == 4) {
-                divSmallBox.style.background = '#bd0b0b'
-            }
-
-            divCard.appendChild(divSmallBox)
-
-            divRow.appendChild(divCard)
-
-            divFluid.appendChild(divRow)
-
-            divContent.appendChild(divFluid)
-
-            feed.appendChild(divContent)
-            }
-
-            console.log(publicacoes)
-
-           
-        
-
-    }
-
-    function maquina(card) {
-        var item = card.id
-
-        sessionStorage.setItem('id_unidade_meuapp', item);
-
-        window.location.href = 'home.html'
-    }
-
-    // FUNÇÃO PARA OBTER AS PUBLICAÇÕES
-    function getUnidadesByGerente(id_unidade) {
-        var id_unidade = sessionStorage.getItem("gerente_meuapp")
-        fetch(`/publicacoes2/getUnidadesByGerente${id_unidade}`)
-            .then(resposta => {
-                if (resposta.ok) {
-                    resposta.json().then(function(resposta) {
-                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-
-                        atualizarFeed(resposta);
-
-                    });
-                } else {
-                    console.error('Nenhum dado encontrado ou erro na API');
-                }
-            })
-            .catch(function(error) {
-                console.error(`Erro na obtenção das publicações: ${error.message}`);
-            });
-    }
-
- 
-</script>

@@ -31,7 +31,7 @@ router.get('/getLeiturasByUnidade:id_unidade', function(req, res, next) {
 	var id_unidade = req.params.id_unidade;
 	console.log('Recuperando todas as publicações');
 	
-	let instrucaoSql = `select 
+	let instrucaoSql = `select top (10)
 	maquina.id_maquina, 
 	maquina.sistema_operacional, 
     maquina.modelo_processador, 
@@ -44,12 +44,12 @@ router.get('/getLeiturasByUnidade:id_unidade', function(req, res, next) {
 		leitura_disco.uso_disco 
 	from 
 		tb_leitura_disco as leitura_disco
-    where leitura_disco.id_leitura_disco = leitura.id_leitura) as "uso_disco",
+    where leitura_disco.id_leitura_disco = leitura.id_leitura) as 'uso_disco',
     (select 
 		leitura_disco.data_insercao 
 	from 
 		tb_leitura_disco as leitura_disco
-    where leitura_disco.id_leitura_disco = leitura.id_leitura) as "data_insercao_disco"
+    where leitura_disco.id_leitura_disco = leitura.id_leitura) as 'data_insercao_disco'
 from tb_leitura as leitura 
 inner join tb_maquina as maquina
 on leitura.id_maquina = maquina.id_maquina
@@ -59,9 +59,8 @@ inner join tb_usuario as usuario
 on usuario.id_usuario = maquina.id_usuario
 inner join tb_unidade as unidade
 on usuario.id_unidade = unidade.id_unidade
-where unidade.id_unidade = ${id_unidade	} 
-order by leitura.nvl_alerta desc
-limit 10;`
+where unidade.id_unidade = ${id_unidade} 
+order by leitura.nvl_alerta desc;`
 
 	sequelize.query(instrucaoSql, {
 		model: Leituras,
@@ -81,7 +80,7 @@ router.get('/getLeiturasById:id_maquina', function(req, res, next) {
 
 	var id_maquina = req.params.id_maquina;
 	
-	let instrucaoSql = `select 
+	let instrucaoSql = `select top(10)
 	usuario.nome,
 	usuario.setor,
 	leitura.id_leitura,
@@ -100,8 +99,7 @@ on disco.id_maquina = maquina.id_maquina
 inner join tb_usuario as usuario
 on usuario.id_usuario = maquina.id_usuario
 where maquina.id_maquina = ${id_maquina}
-order by leitura.id_leitura desc
-limit 10;`
+order by leitura.id_leitura desc;`
 
 
 	sequelize.query(instrucaoSql, {
@@ -156,7 +154,7 @@ router.get('/getLeituraDiscoById:id_maquina', function(req, res, next) {
 
 	var id_maquina = req.params.id_maquina;
 	
-	let instrucaoSql = `select 
+	let instrucaoSql = `select top(1)
 	leitura_disco.uso_disco,
     leitura_disco.data_insercao,
     leitura_disco.nvl_alerta,
@@ -168,8 +166,7 @@ leitura_disco.id_disco = disco.id_disco
 inner join tb_maquina as maquina
 on disco.id_maquina = maquina.id_maquina
 where maquina.id_maquina = ${id_maquina}
-order by leitura_disco.id_leitura_disco desc
-limit 1;`
+order by leitura_disco.id_leitura_disco desc;`
 
 
 	sequelize.query(instrucaoSql, {
@@ -178,6 +175,53 @@ limit 1;`
 	})
 	.then(resultado => {
 		console.log(`Encontrados: ${resultado.length}`);
+		res.json(resultado);
+	}).catch(erro => {
+		console.error(erro);
+		res.status(500).send(erro.message);
+	});
+});
+
+
+router.get('/getUnidadesByGerente:id_gerente', function(req, res, next) {
+	console.log('Recuperando todas as publicações');
+
+	var id_gerente = req.params.id_gerente;
+	
+	let instrucaoSql = `select unidade.id_unidade, unidade.nome, unidade.endereco, unidade.id_gerente, gerente.nome as nome_gerente from tb_unidade as unidade
+	inner join tb_gerente as gerente
+	on unidade.id_gerente = gerente.id_gerente
+	where gerente.id_gerente = ${id_gerente};`
+
+
+	sequelize.query(instrucaoSql, {
+		model: Maquinas,
+		mapToModel: true 
+	})
+	.then(resultado => {
+		console.log(`Encontrados: ${resultado.length}`);
+		res.json(resultado);
+	}).catch(erro => {
+		console.error(erro);
+		res.status(500).send(erro.message);
+	});
+});
+
+router.get('/getFuncionariosByUnidade:id_unidade', function(req, res, next) {
+	console.log('Recuperando todas as publicações');
+
+	var id_unidade = req.params.id_unidade;
+	
+	let instrucaoSql = `select * from tb_usuario where id_unidade = ${id_unidade};`
+
+
+	sequelize.query(instrucaoSql, {
+		model: Maquinas,
+		mapToModel: true 
+	})
+	.then(resultado => {
+		console.log(`Encontrados: ${resultado.length}`);
+		console.log(`Encontrados: ${resultado}`);
 		res.json(resultado);
 	}).catch(erro => {
 		console.error(erro);

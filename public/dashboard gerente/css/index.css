@@ -9,7 +9,7 @@
 body {
     overflow: hidden;
     overflow-y: scroll;
-    background-color: #c9c9db;
+    background-color:#9887f1;
 }
 
 .btn-padrao {
@@ -64,17 +64,13 @@ body {
     --black2: #4d4b4b;
 }
 .container-content{
-background-color: rgb(240, 237, 243);
-height: 100vh;
-width: 100%;
-margin: 1.3em;
-border-radius: 15px;
-box-shadow: 8px 12px 20px -4px rgba(0,0,0,0.78);
-
+background-color: rgb(152 82 222);
 }
 .container-maps{
-height: auto;
+height: 900px;
 padding: 1em;
+justify-content: center;
+
 }
 .mapa-maps{
    display: flex;

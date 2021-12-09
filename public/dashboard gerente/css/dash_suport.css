@@ -1,15 +1,4 @@
 
-main{
-    display: flex;
-}
-
-html body {
-    overflow-y: hidden;
-    margin: 0;
-    padding: 0;
-    border: 0;
-}
-
 li{
     list-style: none;
 }

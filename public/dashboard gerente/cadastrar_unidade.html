@@ -116,6 +116,31 @@
                         </li>
                         <li class="nav-item">
                             <a href="../widgets.html" class="nav-link">
+                                <i class="nav-icon fas fa-th"></i>
+                                <p>
+                                    Setores
+                                    <i class="fas fa-angle-left right"></i>
+
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="todosSetores.html" class="nav-link">
+                                        <i class="nav-icon far fa-circle "></i>
+                                        <p> Todos setores</p>
+
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="cadastrar_setor.html" class="nav-link">
+                                        <i class="nav-icon far fa-circle "></i>
+                                        <p>Cadastrar setor</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../widgets.html" class="nav-link">
                                 <i class="fas fa-map-marked"></i>
                                 <p>
                                     Unidades
@@ -219,43 +244,69 @@
 
             <!-- Main content -->
             <section class="content">
-                <div class="container-fluid">
-                    <!-- cards  -->
-                    <!-- Small boxes (Stat box) -->
-                    <div class="row" id="div_teste">
-                        
-                        
-                        <!-- ./col -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card card-primary">
+                            <div class="card-header">
+                                <h3 class="card-title">General</h3>
+
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                            <i class="fas fa-minus"></i>
+                          </button>
+                                </div>
+                            </div>
+                            <form  id="form_cadastro">
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label for="inputName">Nome da Unidade</label>
+                                    <input type="text" id="ipt_nome" name="nome" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputLocal">Endereço</label>
+                                    <input type="text" id="ipt_endereco" name="endereco" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-10" style="margin-bottom: 10px;">
+                                    <button type="button" onclick="cadastrar()" class="btn btn-success float-right">Cadastrar</button>
+                                </div>
+                            </div>
+                        </form> 
+                            <!-- /.card-body -->
+                        </div>
+                        <!-- /.card -->
                     </div>
-                    <!-- /.row -->
-
-
-            </section>
-            <!-- right col -->
-            </div>
-            <!-- /.content-wrapper -->
-            <footer class="main-footer">
-                <div class="float-right d-none d-sm-block">
 
                 </div>
-                <strong>Copyright &copy;2021 <a ../index.html>4Live</a>.</strong>
-            </footer>
-
-            <!-- Control Sidebar -->
-            <!-- <aside class="control-sidebar control-sidebar-dark">
-            </aside> -->
-            <!-- /.control-sidebar -->
+               
+            </section>
+            <!-- right col -->
         </div>
-        <!-- ./wrapper -->
+        <!-- /.content-wrapper -->
+        <footer class="main-footer">
+            <div class="float-right d-none d-sm-block">
 
-        <!-- jQuery -->
-        <script src="../plugins/jquery/jquery.min.js"></script>
-        <!-- Bootstrap 4 -->
-        <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <!-- AdminLTE App -->
-        <script src="../dist/js/adminlte.min.js"></script>
-        <!-- AdminLTE for demo purposes -->
-        <script src="../dist/js/demo.js"></script>
+            </div>
+            <strong>Copyright &copy;2021 <a ../index.html>4Live</a>.</strong>
+        </footer>
+
+        <!-- Control Sidebar -->
+        <!-- <aside class="control-sidebar control-sidebar-dark">
+            </aside> -->
+        <!-- /.control-sidebar -->
+    </div>
+    <!-- ./wrapper -->
+
+    <!-- jQuery -->
+    <script src="../plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="../dist/js/demo.js"></script>
 
 
 </body>
@@ -263,124 +314,27 @@
 </html>
 
 <script>
-    // FUNÇÃO QUE ATUALIZA A PÁGINA APÓS A RECUPERAÇÃO DOS DADOS
-    setInterval(() => {
-        getUnidadesByGerente();
-        }, 3000);
-        atualizarNome()
+     function cadastrar(id_gerente) {
+        var id_gerente = sessionStorage.getItem("gerente_meuapp")
+        var formulario = new URLSearchParams(new FormData(form_cadastro));
+        fetch(`/usuarios/cadastrarUnidade${id_gerente}`, {
+            method: "POST",
+            body: formulario
+        }).then(function(response) {
 
+            if (response.ok) {
 
-    function atualizarNome() {
-        var nome = sessionStorage.getItem("nome_usuario_meuapp")
-        nome_user.innerHTML = `Olá, ${nome}`;
-    }
+                alert("Cadastro realizado com sucesso")
+                ipt_nome.value = ""
+                ipt_endereco.value = ""
 
-    function atualizarFeed(publicacoes) {
-        var feed = document.getElementById("div_teste");
-        feed.innerHTML = "";
+            } else {
+                console.log(response.json.toString());
 
-        var divContent = document.createElement("div")
-        var divFluid = document.createElement("div")
-        var divRow = document.createElement("section")
-        for (let i = 0; i < publicacoes[0].length; i++) {
-            var publicacao = publicacoes[0];
-            
-
-            console.log(publicacao)
-
-                
-                var divCard = document.createElement("div")
-            var divSmallBox = document.createElement("div")
-            var divCpu = document.createElement("h4")
-            var divMemoria = document.createElement("h4")
-            var divDisco = document.createElement("h4")
-
-            divCpu.innerHTML = `CPU: ${publicacao.uso_cpu}`;
-            divMemoria.innerHTML = `Memoria: ${publicacao.uso_memoria}`;
-            divDisco.innerHTML = `Disco: ${publicacao.uso_disco}`;
-
-            divSmallBox.innerHTML = `
-                <div class="inner">
-                  <h4>Nome unidade: ${publicacao[i].nome}<sup style="font-size: 20px"></sup></h4>
-                  <h4>Endereco: ${publicacao[i].endereco}<sup style="font-size: 20px"></sup></h4>
-                </div>
-                <div class="icon">
-                  <i class="fas fa-hdd"></i>
-                </div>
-                <a href="#" class="small-box-footer">Mais detalhes <i class="fas fa-arrow-circle-right"></i></a>`
-
-            divCard.className = "col-lg-3 "
-            divCard.className += "col-6"
-            divSmallBox.className = "small-box"
-
-
-            divSmallBox.style.backgroundColor = 'green'
-            divSmallBox.style.color = 'white'
-
-            divCard.id = publicacao[i].id_unidade
-            divCard.style.cursor = "pointer"
-            divCard.setAttribute("onclick", "maquina(this)")
-
-            divContent.className = "content"
-            divFluid.className = "container-fluid"
-            divRow.className = "row"
-
-            if (publicacao.nvl_alerta == 1) {
-                divSmallBox.style.background = 'green'
-            } else if (publicacao.nvl_alerta == 2) {
-                divSmallBox.style.background = '#e0a800'
-            } else if (publicacao.nvl_alerta == 3) {
-                divSmallBox.style.background = 'orange'
-            } else if (publicacao.nvl_alerta == 4) {
-                divSmallBox.style.background = '#bd0b0b'
+                console.log('Erro de cadastro!');
             }
+        });
 
-            divCard.appendChild(divSmallBox)
-
-            divRow.appendChild(divCard)
-
-            divFluid.appendChild(divRow)
-
-            divContent.appendChild(divFluid)
-
-            feed.appendChild(divContent)
-            }
-
-            console.log(publicacoes)
-
-           
-        
-
+        return false;
     }
-
-    function maquina(card) {
-        var item = card.id
-
-        sessionStorage.setItem('id_unidade_meuapp', item);
-
-        window.location.href = 'home.html'
-    }
-
-    // FUNÇÃO PARA OBTER AS PUBLICAÇÕES
-    function getUnidadesByGerente(id_unidade) {
-        var id_unidade = sessionStorage.getItem("gerente_meuapp")
-        fetch(`/publicacoes2/getUnidadesByGerente${id_unidade}`)
-            .then(resposta => {
-                if (resposta.ok) {
-                    resposta.json().then(function(resposta) {
-                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-
-                        atualizarFeed(resposta);
-
-                    });
-                } else {
-                    console.error('Nenhum dado encontrado ou erro na API');
-                }
-            })
-            .catch(function(error) {
-                console.error(`Erro na obtenção das publicações: ${error.message}`);
-            });
-    }
-
- 
 </script>

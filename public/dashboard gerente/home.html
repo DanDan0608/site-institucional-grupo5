@@ -114,6 +114,7 @@
                                 <p>Dashboard </p>
                             </a>
                         </li>
+                       
                         <li class="nav-item">
                             <a href="../widgets.html" class="nav-link">
                                 <i class="fas fa-map-marked"></i>
@@ -265,8 +266,8 @@
 <script>
     // FUNÇÃO QUE ATUALIZA A PÁGINA APÓS A RECUPERAÇÃO DOS DADOS
     setInterval(() => {
-        getUnidadesByGerente();
-        }, 3000);
+            obterPublicacoes();
+        }, 2000);
         atualizarNome()
 
 
@@ -282,14 +283,10 @@
         var divContent = document.createElement("div")
         var divFluid = document.createElement("div")
         var divRow = document.createElement("section")
-        for (let i = 0; i < publicacoes[0].length; i++) {
-            var publicacao = publicacoes[0];
-            
+        for (let i = 0; i < publicacoes.length; i++) {
+            var publicacao = publicacoes[i];
 
-            console.log(publicacao)
-
-                
-                var divCard = document.createElement("div")
+            var divCard = document.createElement("div")
             var divSmallBox = document.createElement("div")
             var divCpu = document.createElement("h4")
             var divMemoria = document.createElement("h4")
@@ -301,8 +298,9 @@
 
             divSmallBox.innerHTML = `
                 <div class="inner">
-                  <h4>Nome unidade: ${publicacao[i].nome}<sup style="font-size: 20px"></sup></h4>
-                  <h4>Endereco: ${publicacao[i].endereco}<sup style="font-size: 20px"></sup></h4>
+                  <h4>CPU: ${publicacao.uso_cpu}<sup style="font-size: 20px">%</sup></h4>
+                  <h4>Memoria: ${publicacao.uso_memoria}<sup style="font-size: 20px">%</sup></h4>
+                  <h4>Disco: ${publicacao.uso_disco}<sup style="font-size: 20px">%</sup></h4>
                 </div>
                 <div class="icon">
                   <i class="fas fa-hdd"></i>
@@ -317,7 +315,7 @@
             divSmallBox.style.backgroundColor = 'green'
             divSmallBox.style.color = 'white'
 
-            divCard.id = publicacao[i].id_unidade
+            divCard.id = publicacao.fk_maquina
             divCard.style.cursor = "pointer"
             divCard.setAttribute("onclick", "maquina(this)")
 
@@ -344,27 +342,22 @@
             divContent.appendChild(divFluid)
 
             feed.appendChild(divContent)
-            }
-
-            console.log(publicacoes)
-
-           
-        
+        }
 
     }
 
     function maquina(card) {
         var item = card.id
 
-        sessionStorage.setItem('id_unidade_meuapp', item);
+        sessionStorage.setItem('id_maquina_meuapp', item);
 
-        window.location.href = 'home.html'
+        window.location.href = 'historicoIndividualSuporte.html'
     }
 
     // FUNÇÃO PARA OBTER AS PUBLICAÇÕES
-    function getUnidadesByGerente(id_unidade) {
-        var id_unidade = sessionStorage.getItem("gerente_meuapp")
-        fetch(`/publicacoes2/getUnidadesByGerente${id_unidade}`)
+    function obterPublicacoes(id_unidade) {
+        var id_unidade = sessionStorage.getItem("id_unidade_meuapp")
+        fetch(`/publicacoes2/getLeiturasByUnidade${id_unidade}`)
             .then(resposta => {
                 if (resposta.ok) {
                     resposta.json().then(function(resposta) {

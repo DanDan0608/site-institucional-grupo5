@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>gerente |Home</title>
+
+    <!-- Google Font: Nunito -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../dist/css/adminlte.min.css">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="../../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="../../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+    <link rel="stylesheet" href="../../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+</head>
+
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+
+        <div class="preloader flex-column justify-content-center align-items-center">
+            <img class="animation__wobble" src="../img/image-removebg-preview (13).png" alt="" width="400">
+        </div>
+        <!-- Navbar -->
+        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+            <!-- Left navbar links -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                </li>
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a href="./index_suport.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a href="#" class="nav-link">Cadastrar funcionário</a>
+                </li>
+            </ul>
+
+            <!-- Right navbar links -->
+            <ul class="navbar-nav ml-auto">
+                <!-- Navbar Search -->
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="navbar-search" href="#" role="button">
+                        <i class="fas fa-search"></i>
+                    </a>
+                    <div class="navbar-search-block">
+                        <form class="form-inline">
+                            <div class="input-group input-group-sm">
+                                <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+                                <div class="input-group-append">
+                                    <button class="btn btn-navbar" type="submit">
+                  <i class="fas fa-search"></i>
+                </button>
+                                    <button class="btn btn-navbar" type="button" data-widget="navbar-search">
+                  <i class="fas fa-times"></i>
+                </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+                        <i class="fas fa-expand-arrows-alt"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a onclick="darck()" class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
+                        <i class="fas fa-th-large"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <!-- /.navbar -->
+
+        <!-- Main Sidebar Container -->
+        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+            <!-- Brand Logo -->
+            <a href="../index.html" class="brand-link">
+                <img src="../img/image-removebg-preview (12).png" alt=" Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+                <span class="brand-text font-weight-light">4live</span>
+            </a>
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Sidebar user (optional) -->
+                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                    <div class="image">
+                        <img src="../dist/img/user1-128x128.jpg" class="img-circle elevation-2" alt="User Image">
+                    </div>
+                    <div class="info">
+                        <a href="perfil_gerente.html" class="d-block">Julio Mesquita</a>
+                    </div>
+                </div>
+
+                <!-- SidebarSearch Form -->
+                <div class="form-inline">
+                    <div class="input-group" data-widget="sidebar-search">
+                        <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+                        <div class="input-group-append">
+                            <button class="btn btn-sidebar">
+              <i class="fas fa-search fa-fw"></i>
+            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar Menu -->
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                        <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link">
+                                <p>Dashboard </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../widgets.html" class="nav-link">
+                                <i class="nav-icon fas fa-th"></i>
+                                <p>
+                                    Setores
+                                    <i class="fas fa-angle-left right"></i>
+
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="todosSetores.html" class="nav-link">
+                                        <i class="nav-icon far fa-circle "></i>
+                                        <p> Todos setores</p>
+
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="cadastrar_setor.html" class="nav-link">
+                                        <i class="nav-icon far fa-circle "></i>
+                                        <p>Cadastrar setor</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../widgets.html" class="nav-link">
+                                <i class="fas fa-map-marked"></i>
+                                <p>
+                                    Unidades
+                                    <i class="fas fa-angle-left right"></i>
+
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="todasUnidades.html" class="nav-link">
+                                        <i class="nav-icon far fa-circle "></i>
+                                        <p> Todas unidades</p>
+
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="cadastrar_unidade.html" class="nav-link">
+                                        <i class="nav-icon far fa-circle "></i>
+                                        <p>Cadastrar unidade</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../widgets.html" class="nav-link">
+                                <i class="fas fa-users"></i>
+                                <p>
+                                    Funcionário
+                                    <i class="fas fa-angle-left right"></i>
+
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="todos_funcionarios.html" class="nav-link">
+                                        <i class="nav-icon far fa-circle "></i>
+                                        <p> Todos funcionários</p>
+
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="cadastrar_funcionario.html" class="nav-link">
+                                        <i class="nav-icon far fa-circle "></i>
+                                        <p>Cadastrar funcionário</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="parametros_suporte.html" class="nav-link">
+                                <i class="nav-icon fas fa-table"></i>
+                                <p>
+                                    Definir parâmetro
+
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="perfil_gerente.html" class="nav-link">
+                                <i class="nav-icon fas fa-edit"></i>
+                                <p>Perfil</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="enviarMensagem.html" class="nav-link">
+                                <i class="nav-icon fas fa-question"></i>
+                                <p>Contato</p>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- /.sidebar-menu -->
+            </div>
+            <!-- /.sidebar -->
+        </aside>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1 class="m-0">Nome da unidade</h1>
+
+                        </div>
+                        <!-- /.col -->
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item active">Cadastrar funcionário</li>
+                            </ol>
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <!-- /.container-fluid -->
+            </div>
+            <!-- /.content-header -->
+
+            <!-- Main content -->
+
+            <section class="content">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card card-primary">
+                            <div class="card-header">
+                                <h3 class="card-title">General</h3>
+
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                            <i class="fas fa-minus"></i>
+                          </button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label for="inputName">Nome do funcionario</label>
+                                    <input type="text" id="inputName" class="form-control" onkeyup="validar_nome()">
+                                    <div id="msg_nome"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputEmail">Email</label>
+                                    <input type="text" id="inputEmail" class="form-control" onkeyup="validar_email()">
+                                    <div id="msg_email"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputPassword">Senha</label>
+                                    <input type="text" id="inputPassword" class="form-control" onkeyup="validar_senha()">
+                                    <div id="msg_senha"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputTelephone">Telefone</label>
+                                    <input type="tel" id="inputTelephone" class="form-control" onkeyup="validar_telefone()">
+                                    <div id="msg_telefone"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputLocal">Unidade</label>
+                                    <select id="inputLocal" class="form-control custom-select">
+                                        <option selected disabled>Selecione uma cidade</option>
+                                        <option>Jaba II</option>
+                                        <option>Tatuapé</option>
+                                        <option>Paulista</option>
+                                        </select>
+                                    <div id="msg_unidade"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputSetor">Setor</label>
+                                    <select id="inputSetor" class="form-control custom-select">
+                                        <option selected disabled>Selecione um setor</option>
+                                        <option>Suporte tecnico</option>
+                                        <option>Administração</option>
+                                        <option>Controle de qualidade</option></select>
+
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputAcesso">Nível de acesso</label>
+                                    <select id="inputAcesso" class="form-control custom-select">
+                                        <option selected disabled>Selecione um nivel</option>
+                                    <option value="1">Gerente</option>
+                                    <option value="2">Suporte</option>
+                                </select>
+
+                                </div>
+                            </div>
+                            <!-- /.card-body -->
+                        </div>
+                        <!-- /.card -->
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <a href="#" class="btn btn-secondary">Cancelar</a>
+                        <input type="submit" value="Cadastrar funcionario" class="btn btn-success float-right" onclick="validar_cadastro()">
+                        <div id="div_msg_erro"></div>
+                    </div>
+                </div>
+            </section>
+            <!-- right col -->
+        </div>
+        <!-- /.content-wrapper -->
+        <footer class="main-footer">
+            <div class="float-right d-none d-sm-block">
+
+            </div>
+            <strong>Copyright &copy;2021 <a href="../index.html">4Live</a>.</strong>
+        </footer>
+
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+        </aside>
+        <!-- /.control-sidebar -->
+    </div>
+    <!-- ./wrapper -->
+
+    <!-- jQuery -->
+    <script src="../plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- DataTables  & Plugins -->
+    <!-- AdminLTE App -->
+    <script src="../dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="../dist/js/demo.js"></script>
+    <!-- Page specific script -->
+    <script>
+        $(function() {
+            $("#example1").DataTable({
+                "responsive": true,
+                "lengthChange": false,
+                "autoWidth": false,
+                "buttons": ["copy", "csv", "excel", "pdf", "print"]
+            }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+            $('#example2').DataTable({
+                "paging": true,
+                "lengthChange": false,
+                "searching": false,
+                "ordering": true,
+                "info": true,
+                "autoWidth": false,
+                "responsive": true,
+            });
+        });
+    </script>
+    <script>
+        // Expressão nome
+        var nomeReg = /^[À-úA-z ]{1,}$/;;
+        //Expressão Senha
+        var senhaReg = /^(?=.*[0-9]{3})(?=.*[A-Z]{1})(?=.*[a-z]{1})[a-zA-Z0-9]{6,}$/;
+        // Expressão email
+        var emailReg = /^([À-úA-z0-9._-]+@[a-z0-9._-]+\.[A-z0-9_-]+)$/;
+        // Expressão telefone
+        var telefoneReg = /^[0-9]{2,}[0-9]{4}[0-9]{4}$/;
+
+
+
+        function validar_nome() {
+            var nome = ipt_nome.value;
+            if (nome.match(nomeReg)) {
+                msg_nome.innerHTML = '';
+                msg_nome.style.display = 'none';
+                ipt_nome.style.border = '3px solid green';
+                ipt_nome.style.color = 'white';
+            } else {
+                msg_nome.style.display = 'block';
+                msg_nome.innerHTML = `Verifique o campo preenchido`;
+                msg_nome.style.color = 'red'
+                ipt_nome.style.border = '3px solid red';
+                ipt_nome.style.color = 'red';
+            }
+        }
+        // function validar_unidade() {
+        //     var unidade = ipt_unidade.value;
+        //     if (unidade.match(nomeReg)) {
+        //         msg_unidade.innerHTML = '';
+        //         msg_unidade.style.display = 'none';
+        //         ipt_unidade.style.border = '3px solid green';
+        //         ipt_unidade.style.color = 'white';
+        //     } else {
+        //         msg_unidade.style.display = 'block';
+        //         msg_unidade.innerHTML = `Verifique o campo preenchido`;
+        //         msg_unidade.style.color = 'red'
+        //         ipt_unidade.style.border = '3px solid red';
+        //         ipt_unidade.style.color = 'red';
+        //     }
+        // }
+
+        function validar_email() {
+            var email = ipt_email.value;
+            if (email.match(emailReg)) {
+                msg_email.innerHTML = '';
+                msg_email.style.display = 'none';
+                ipt_email.style.border = '3px solid green';
+                ipt_email.style.color = 'white';
+            } else {
+                msg_email.style.display = 'block';
+                msg_email.innerHTML = `Digite um email válido`;
+                msg_email.style.color = 'red';
+                ipt_email.style.border = '3px solid red'
+                ipt_email.style.color = 'red'
+            }
+        }
+
+        function validar_telefone() {
+            var telefone = ipt_telefone.value;
+            if (telefone.match(telefoneReg)) {
+                msg_telefone.innerHTML = '';
+                msg_telefone.style.display = 'none';
+                ipt_telefone.style.border = '3px solid green';
+                ipt_telefone.style.color = 'white';
+            } else {
+                msg_telefone.style.display = 'block';
+                msg_telefone.innerHTML = `Digite um número de telefone válido`;
+                msg_telefone.style.color = 'red';
+                ipt_telefone.style.border = '3px solid red'
+            }
+        }
+
+        function validar_senha() {
+            var senha = ipt_senha.value;
+            if (senha.match(senhaReg)) {
+                msg_senha.style.display = 'none';
+                msg_senha.innerHTML = '';
+                ipt_senha.style.border = '3px solid green';
+                ipt_senha.style.color = 'white';
+            } else {
+                msg_senha.style.display = 'block'
+                msg_senha.innerHTML = ` A senha deve conter pelo menos 6 dígitos,
+                <br>1 letra maiúscula, 
+                <br>1 letra minúscula 
+                <br>e 3 números'`;
+                msg_senha.style.color = 'red';
+                ipt_senha.style.border = '3px solid red';
+                ipt_senha.style.color = 'red';
+            }
+        }
+
+        function validar_cadastro() {
+            // Valores dos inputs
+            var nome = ipt_nome.value;
+            var email = ipt_email.value;
+            var senha = ipt_senha.value;
+            var telefone = ipt_telefone.value;
+            var unidade = ipt_unidade.value;
+            var nvl_acesso = ipt_nvl_acesso.value;
+            // Valida Campos
+            if ((nome.match(nomeReg) && email.match(emailReg) && senha.match(senhaReg) && (nvl_acesso > 0) && telefone.match(telefoneReg))) {
+                if (nvl_acesso == 1) {
+                    cadastrar();
+                    cadastrarGerente();
+                } else if (nvl_acesso == 2) {
+                    cadastrar();
+                }
+            } else {
+                div_msg_erro.style.color = 'red'
+                div_msg_erro.innerHTML = `Verifique os campos preenchidos`
+            }
+
+
+        }
+
+        function cadastrarGerente() {
+            var formulario = new URLSearchParams(new FormData(form_cadastro));
+            fetch(`/usuarios/cadastrarGerente`, {
+                method: "POST",
+                body: formulario
+            }).then(function(response) {
+
+                if (response.ok) {
+
+                    window.location.href = 'login.html';
+
+                } else {
+                    console.log(response.json.toString());
+
+                    console.log('Erro de cadastro!');
+                }
+            });
+
+            return false;
+        }
+
+        function cadastrar() {
+            var formulario = new URLSearchParams(new FormData(form_cadastro));
+            fetch(`/usuarios/cadastrar`, {
+                method: "POST",
+                body: formulario
+            }).then(function(response) {
+
+                if (response.ok) {
+
+                    window.location.href = 'login.html';
+
+                } else {
+                    console.log(response.json.toString());
+
+                    console.log('Erro de cadastro!');
+                }
+            });
+
+            return false;
+        }
+    </script>
+
+
+</body>
+
+</html>
